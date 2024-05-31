@@ -57,6 +57,9 @@ def entrypoint():
 
     while True:
         for filename in os.listdir(input_dir):
+            if not filename.endswith('.xml'):
+                continue
+
             full_path = os.path.abspath(os.path.join(input_dir, filename))
             if full_path not in processed_files:
                 processed_files.add(full_path)
