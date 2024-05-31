@@ -1,0 +1,10 @@
+xml_path:
+  row_tag: 'RoutingInfo'
+  MCC: 'CCITT_E212_NumberSeries.MCC'
+  MNC: 'CCITT_E212_NumberSeries.MNC'
+  Country_code: 'CCITT_E164_NumberSeries.MSISDN_NumberRanges.RangeData.NumberRange.CC'
+  NDC: 'CCITT_E164_NumberSeries.MSISDN_NumberRanges.RangeData.NumberRange.NDC'
+  SN_Start: 'CCITT_E164_NumberSeries.MSISDN_NumberRanges.RangeData.NumberRange.SN_Range.SN_RangeStart'
+  SN_Stop: 'CCITT_E164_NumberSeries.MSISDN_NumberRanges.RangeData.NumberRange.SN_Range.SN_RangeStop'
+  target_MCC: '240'
+  target_MNC: '08'
