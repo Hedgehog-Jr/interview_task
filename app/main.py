@@ -55,24 +55,17 @@ def entrypoint():
     processed_files = set()
     config = get_app_config()
 
-    while True:
-        for filename in os.listdir(input_dir):
-            if not filename.endswith('.xml'):
-                continue
+    for filename in os.listdir(input_dir):
+        if not filename.endswith('.xml'):
+            continue
 
-            full_path = os.path.abspath(os.path.join(input_dir, filename))
-            if full_path not in processed_files:
-                processed_files.add(full_path)
-                df = read_xml_into_df(full_path, config.get('row_tag'))
-                # TODO: it's better to add some schema validation here
-                transformed_df = transform_df(df, config)
-                write_df_to_csv(transformed_df, filename)
-
-                # I'm finishing application after the first file has been proceeded,
-                # as I don't want to get infinity docker run
-                return
-
-        time.sleep(5)
+        full_path = os.path.abspath(os.path.join(input_dir, filename))
+        if full_path not in processed_files:
+            processed_files.add(full_path)
+            df = read_xml_into_df(full_path, config.get('row_tag'))
+            # TODO: it's better to add some schema validation here
+            transformed_df = transform_df(df, config)
+            write_df_to_csv(transformed_df, filename)
 
 
 if __name__ == '__main__':
