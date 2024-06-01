@@ -18,3 +18,10 @@ Each event should contain:
 * XML schema details (or were they can be found)
 * transformation config (or were it can be found)
 * output location
+
+# Task 2
+Solution with SQL query can be found in `SQL_task.sql` file. 
+There were made some assumptions because of lack of knowledge of the database.
+Happy to discuss them all.
+About optimisation: from my POV, it's possible to speed up query by changing tables structure, as adding indexes etc 
+(if they don't exist)
